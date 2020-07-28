@@ -13,6 +13,7 @@
 		B467FA7224CFF82B00C6FC10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B467FA7024CFF82B00C6FC10 /* Main.storyboard */; };
 		B467FA7424CFF82D00C6FC10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B467FA7324CFF82D00C6FC10 /* Assets.xcassets */; };
 		B467FA7724CFF82D00C6FC10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B467FA7524CFF82D00C6FC10 /* LaunchScreen.storyboard */; };
+		B467FA7F24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B467FA7E24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B467FA7324CFF82D00C6FC10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B467FA7624CFF82D00C6FC10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B467FA7824CFF82D00C6FC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B467FA7E24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B467FA6A24CFF82B00C6FC10 /* AppDelegate.swift */,
 				B467FA6C24CFF82B00C6FC10 /* SceneDelegate.swift */,
 				B467FA6E24CFF82B00C6FC10 /* ViewController.swift */,
+				B467FA7E24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift */,
 				B467FA7024CFF82B00C6FC10 /* Main.storyboard */,
 				B467FA7324CFF82D00C6FC10 /* Assets.xcassets */,
 				B467FA7524CFF82D00C6FC10 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				B467FA6F24CFF82B00C6FC10 /* ViewController.swift in Sources */,
 				B467FA6B24CFF82B00C6FC10 /* AppDelegate.swift in Sources */,
 				B467FA6D24CFF82B00C6FC10 /* SceneDelegate.swift in Sources */,
+				B467FA7F24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
