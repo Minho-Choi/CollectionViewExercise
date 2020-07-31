@@ -10,21 +10,6 @@ import UIKit
 
 class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
 
-    var detailImageView = UIImageView()
-    
-    
-    var image: UIImage? {
-        get {
-            return detailImageView.image
-        }
-        set {
-            detailImageView.image = newValue
-            detailImageView.sizeToFit()
-            DetailScrollView?.contentSize = detailImageView.frame.size
-            spinner?.stopAnimating()
-        }
-    }
-    
     var viewControllerIsOnScreen: Bool {
         return view.window != nil
     }
@@ -36,7 +21,7 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
             image = nil
             
             if viewControllerIsOnScreen {
-                if let uncoveredURL = imageURL?.imageURL {
+                if let uncoveredURL = imageURL {
                     fetchImage(url: uncoveredURL)
                     print(uncoveredURL)
                 } else {
@@ -52,9 +37,26 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
             DetailScrollView.zoomScale = 1.0
             DetailScrollView.maximumZoomScale = 5.0
             DetailScrollView.delegate = self
-            DetailScrollView.addSubview(detailImageView)
         }
     }
+    
+
+    @IBOutlet weak var detailImageView: UIImageView!
+    
+    var image: UIImage? {
+        get {
+            return detailImageView.image
+        }
+        set {
+            detailImageView?.image = newValue
+            detailImageView?.layer.borderWidth = 3.0
+            detailImageView?.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            detailImageView?.contentMode = .scaleAspectFit
+            DetailScrollView?.contentSize = detailImageView.frame.size
+            spinner?.stopAnimating()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,7 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
 
          // Check if we need to fetch the image
         if detailImageView.image == nil{
-            fetchImage(url: imageURL!.imageURL)
+            fetchImage(url: imageURL!)
          }
      }
     

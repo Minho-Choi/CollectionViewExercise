@@ -153,8 +153,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                     if url != nil && ratio != nil {
                         
-                        print("url: \(url), ratio: \(ratio)")
-                        
                         DispatchQueue.main.async {
                             
                             collectionView.performBatchUpdates({
