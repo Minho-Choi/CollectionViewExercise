@@ -52,8 +52,10 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
             detailImageView?.layer.borderWidth = 3.0
             detailImageView?.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             detailImageView?.contentMode = .scaleAspectFit
-            DetailScrollView?.contentSize = detailImageView.frame.size
-            spinner?.stopAnimating()
+//            DetailScrollView?.contentSize = detailImageView.frame.size
+            if spinner != nil {
+                spinner.stopAnimating()
+            }
         }
     }
     
