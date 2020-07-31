@@ -88,7 +88,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "DetailImage" {
-            let detailViewController = segue.destination as! CollectionViewCellViewController
+            let detailViewController = segue.destination.contents as! CollectionViewCellViewController
             detailViewController.imageURL = sender as? URL
         }
     }

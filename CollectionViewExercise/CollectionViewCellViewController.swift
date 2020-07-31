@@ -10,16 +10,17 @@ import UIKit
 
 class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var detailImageView: UIImageView!
+    var detailImageView = UIImageView()
+    
     
     var image: UIImage? {
         get {
             return detailImageView.image
         }
         set {
-            detailImageView?.image = newValue
-            detailImageView?.sizeToFit()
-//            DetailScrollView?.contentSize = detailImageView.frame.size
+            detailImageView.image = newValue
+            detailImageView.sizeToFit()
+            DetailScrollView?.contentSize = detailImageView.frame.size
             spinner?.stopAnimating()
         }
     }
@@ -45,15 +46,15 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-
-//    @IBOutlet weak var DetailScrollView: UIScrollView! {
-//        didSet {
-//            DetailScrollView.minimumZoomScale = 1.0
-//            DetailScrollView.maximumZoomScale = 5.0
-//            DetailScrollView.delegate = self
-//            DetailScrollView.addSubview(detailImageView)
-//        }
-//    }
+    @IBOutlet weak var DetailScrollView: UIScrollView! {
+        didSet {
+            DetailScrollView.minimumZoomScale = 1.0
+            DetailScrollView.zoomScale = 1.0
+            DetailScrollView.maximumZoomScale = 5.0
+            DetailScrollView.delegate = self
+            DetailScrollView.addSubview(detailImageView)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +71,10 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
             fetchImage(url: imageURL!.imageURL)
          }
      }
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//        return detailImageView
-//    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return detailImageView
+    }
     
     func fetchImage(url: URL) {
         spinner.startAnimating()
@@ -85,8 +87,9 @@ class CollectionViewCellViewController: UIViewController, UIScrollViewDelegate {
                     self?.detailImageView.image = UIImage(data: urlContents)
                 }
             } else {
-                
-                self?.detailImageView.image = UIImage(systemName: "xmark.rectangle")
+                DispatchQueue.main.async {
+                    self?.detailImageView.image = UIImage(systemName: "xmark.rectangle")
+                }
             }
         }
     }

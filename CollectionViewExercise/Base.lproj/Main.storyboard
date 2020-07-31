@@ -121,24 +121,26 @@
                                 <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
                                 <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oFC-pd-aE1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="690" translatesAutoresizingMaskIntoConstraints="NO" id="IJ8-fh-7pI">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="JE8-BA-vSj"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ViF-7t-huv"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oFC-pd-aE1" firstAttribute="leading" secondItem="Pi3-j4-b7o" secondAttribute="leading" id="1r7-r8-Odt"/>
-                            <constraint firstItem="oFC-pd-aE1" firstAttribute="trailing" secondItem="Pi3-j4-b7o" secondAttribute="trailing" id="6Zs-pV-Bqw"/>
+                            <constraint firstItem="IJ8-fh-7pI" firstAttribute="top" secondItem="Pi3-j4-b7o" secondAttribute="top" id="4nm-6E-rNa"/>
+                            <constraint firstItem="Pi3-j4-b7o" firstAttribute="bottom" secondItem="IJ8-fh-7pI" secondAttribute="bottom" id="AuU-l3-VpH"/>
+                            <constraint firstItem="IJ8-fh-7pI" firstAttribute="leading" secondItem="Pi3-j4-b7o" secondAttribute="leading" id="Lre-Xe-svg"/>
                             <constraint firstItem="reO-xT-7Pe" firstAttribute="centerY" secondItem="qJ7-M4-xff" secondAttribute="centerY" id="N3w-wf-Jjb"/>
-                            <constraint firstItem="oFC-pd-aE1" firstAttribute="top" secondItem="Pi3-j4-b7o" secondAttribute="top" constant="-88" id="X4u-DS-3f2"/>
-                            <constraint firstItem="Pi3-j4-b7o" firstAttribute="bottom" secondItem="oFC-pd-aE1" secondAttribute="bottom" id="XC9-Hy-Wfc"/>
                             <constraint firstItem="reO-xT-7Pe" firstAttribute="centerX" secondItem="qJ7-M4-xff" secondAttribute="centerX" id="lO0-mz-FgW"/>
+                            <constraint firstItem="Pi3-j4-b7o" firstAttribute="trailing" secondItem="IJ8-fh-7pI" secondAttribute="trailing" id="wG9-vw-X5R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pi3-j4-b7o"/>
                     </view>
                     <navigationItem key="navigationItem" id="zXu-vH-1dd"/>
                     <connections>
-                        <outlet property="detailImageView" destination="oFC-pd-aE1" id="5nm-Hg-Ct9"/>
+                        <outlet property="DetailScrollView" destination="IJ8-fh-7pI" id="oWA-bZ-AJ2"/>
                         <outlet property="spinner" destination="reO-xT-7Pe" id="0fJ-aP-ET5"/>
                     </connections>
                 </viewController>
