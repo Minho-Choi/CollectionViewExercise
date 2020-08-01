@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+
+//Model
 class ImageGallery {
     
     // create new gallery with name and items
@@ -34,11 +36,16 @@ class ImageGallery {
 }
 
 
+// controller
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
 
-    // Model
     
     var gallery = ImageGallery()
+    
+    lazy var cellWidth: CGFloat = view.frame.width
+    var flowLayout: UICollectionViewFlowLayout? {
+        return collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+    }
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -46,16 +53,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collectionView.delegate = self
             collectionView.dragDelegate = self
             collectionView.dropDelegate = self
+            let pinchZoomGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(zoomScale(_:)))
+            collectionView.addGestureRecognizer(pinchZoomGestureRecognizer)
         }
     }
      // 화면 방향 전환 시 뷰 다시 그리기
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        if let flowLayout = self.collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.invalidateLayout()
-        }
+        flowLayout?.invalidateLayout()
     }
     
-    
+    @objc func zoomScale(_ recognizer: UIPinchGestureRecognizer) {
+        cellWidth = cellWidth * recognizer.scale
+        recognizer.scale = 1.0
+        flowLayout?.invalidateLayout()
+    }
     
     // Collection View Data Protocols
     
@@ -66,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //let aspectRatio = CGFloat(imageARStringSet[indexPath.item])
         let ratio = CGFloat(gallery.items[indexPath.item].ratio)
-        let width = view.frame.width / 3.2
+        let width = cellWidth
         print("frame size: \(width) * \(width * ratio)")
         return CGSize(width: width, height: width * ratio)
     }
