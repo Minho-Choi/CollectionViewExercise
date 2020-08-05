@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B449E5EC24D544A700FE6C0A /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449E5EB24D544A700FE6C0A /* DocumentViewController.swift */; };
 		B467FA6B24CFF82B00C6FC10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B467FA6A24CFF82B00C6FC10 /* AppDelegate.swift */; };
 		B467FA6D24CFF82B00C6FC10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B467FA6C24CFF82B00C6FC10 /* SceneDelegate.swift */; };
 		B467FA6F24CFF82B00C6FC10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B467FA6E24CFF82B00C6FC10 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B449E5EB24D544A700FE6C0A /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		B467FA6724CFF82B00C6FC10 /* CollectionViewExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B467FA6A24CFF82B00C6FC10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B467FA6C24CFF82B00C6FC10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,10 +66,11 @@
 			children = (
 				B467FA6A24CFF82B00C6FC10 /* AppDelegate.swift */,
 				B467FA6C24CFF82B00C6FC10 /* SceneDelegate.swift */,
+				B449E5EB24D544A700FE6C0A /* DocumentViewController.swift */,
 				B467FA6E24CFF82B00C6FC10 /* ViewController.swift */,
+				B467FAA624D281E200C6FC10 /* CollectionViewCellViewController.swift */,
 				B467FA7E24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift */,
 				B467FA7024CFF82B00C6FC10 /* Main.storyboard */,
-				B467FAA624D281E200C6FC10 /* CollectionViewCellViewController.swift */,
 				B467FA7324CFF82D00C6FC10 /* Assets.xcassets */,
 				B467FA7524CFF82D00C6FC10 /* LaunchScreen.storyboard */,
 				B467FAA424D278BF00C6FC10 /* Utilities.swift */,
@@ -151,6 +154,7 @@
 				B467FA6B24CFF82B00C6FC10 /* AppDelegate.swift in Sources */,
 				B467FA6D24CFF82B00C6FC10 /* SceneDelegate.swift in Sources */,
 				B467FAA524D278BF00C6FC10 /* Utilities.swift in Sources */,
+				B449E5EC24D544A700FE6C0A /* DocumentViewController.swift in Sources */,
 				B467FA7F24CFFABA00C6FC10 /* EmojiCollectionViewCell.swift in Sources */,
 				B467FAA724D281E200C6FC10 /* CollectionViewCellViewController.swift in Sources */,
 			);

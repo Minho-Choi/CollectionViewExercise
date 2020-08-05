@@ -39,6 +39,13 @@ class ImageGallery {
 // controller
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
 
+    var optionalGallery: ImageGallery? {
+        didSet {
+            if let uncoveredGallery = optionalGallery {
+                gallery = uncoveredGallery
+            }
+        }
+    }
     
     var gallery = ImageGallery()
     
